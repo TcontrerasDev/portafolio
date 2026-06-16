@@ -1,0 +1,44 @@
+/* Optimización de hardware para elementos animados con GSAP */
+.contact-title,
+.contact-desc,
+.contact-email,
+.contact-line,
+.contact-btn {
+    will-change: transform, opacity;
+}
+
+/* Efecto de línea inferior expansible para el Email */
+.contact-email::after {
+    content: '';
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #9B59B6;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-email:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Efecto de llenado de fondo (Background Fill) para los botones */
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9B59B6;
+    z-index: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.contact-btn:hover::before {
+    transform: translateY(-100%);
+}
