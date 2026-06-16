@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    color: transparent;
+}
+
+/* Aceleración por hardware para elementos del Hero */
+.hero-logo,
+.hero-title-text,
+.hero-title-dot,
+.hero-footer-title,
+.hero-footer-desc {
+    will-change: transform, opacity, filter;
+}
+

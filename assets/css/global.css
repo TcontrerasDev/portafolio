@@ -1,0 +1,233 @@
+body{
+    background-color: #010101;
+    background-image:
+        linear-gradient(rgba(155, 89, 182, 0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(155, 89, 182, 0.6) 1px, transparent 1px);
+    background-size: 40px 40px;
+    overflow-x: hidden;
+}
+
+/* Cuando la cuadrícula por Canvas dinámica se carga con éxito */
+body.js-grid-loaded {
+    background-image: none !important;
+}
+
+body.js-grid-loaded div[class*="bg-[#010101f0]"] {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#interactive-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    display: block;
+}
+
+h1,h2,h3,h4{
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+p{
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.menu-brand-text {
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.5);
+    color: transparent;
+}
+
+.menu-link-fill {
+    display: inline-block;
+    position: relative;
+}
+
+.menu-link-number {
+    display: inline-block;
+}
+
+/* Enlaces del menú overlay inician en morado */
+#full-screen-menu .menu-link-fill{
+    color: #9B59B6;
+}
+#full-screen-menu .menu-link-number{
+    color: #ffffff;
+}
+
+header{
+    top:0;
+    right: 50%;
+    transform: translateX(50%);
+    pointer-events: none; /* Permitir clicks a través de las zonas vacías del contenedor */
+}
+
+header #logo,
+header #menu-toggle,
+header ul {
+    pointer-events: auto; /* Mantener la interactividad de los elementos reales */
+}
+
+/* Luz Hero - Efecto radial global */
+.luz-hero {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+        circle,
+        rgba(155, 89, 182, 0.5) 0%,
+        rgba(155, 89, 182, 0.5) 30%,
+        transparent 70%
+    );
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+
+    @media (width < 992px) {
+        width: 400px;
+        height: 400px;
+        filter: blur(60px);
+    }
+
+    @media (width < 576px) {
+        width: 300px;
+        height: 300px;
+        filter: blur(50px);
+    }
+}
+
+/* Optimización de hardware para Perfil */
+.profile-card,
+.profile-img,
+.profile-name,
+.profile-para,
+.profile-grid-item {
+    will-change: transform, opacity;
+}
+
+.profile-img{
+    filter: grayscale(1) brightness(0.7);
+}
+
+/* Efecto de giro 3D en hover para el isotipo de las subpáginas */
+#logo {
+    perspective: 1000px;
+    display: inline-block;
+}
+
+#logo img {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+#logo:hover img,
+#logo a:focus-visible img {
+    transform: rotateY(360deg) scale(1.08);
+}
+
+/* Cursor personalizado (solo para desktop con puntero fino) */
+@media (pointer: fine) {
+    body.js-cursor-loaded {
+        cursor: none; /* Ocultar cursor nativo cuando JS ya cargó */
+    }
+
+    body.js-cursor-loaded a,
+    body.js-cursor-loaded button,
+    body.js-cursor-loaded [role="button"],
+    body.js-cursor-loaded .cursor-pointer {
+        cursor: none; /* Asegurar que los links tampoco muestren cursor nativo */
+    }
+
+    .custom-cursor-dot {
+        width: 12px;
+        height: 12px;
+        background-color: #9B59B6;
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9999;
+        will-change: transform;
+        transition: background-color 0.3s ease, scale 0.3s ease;
+    }
+
+    .custom-cursor-ring {
+        width: 32px;
+        height: 32px;
+        border: 1px solid rgba(155, 89, 182, 0.5);
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9998;
+        will-change: transform;
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    /* Estado Hover del aro */
+    .custom-cursor-ring.cursor-hover {
+        width: 56px;
+        height: 56px;
+        border-color: #9B59B6;
+        background-color: rgba(155, 89, 182, 0.1);
+    }
+    
+    /* Estado Hover del punto central */
+    .custom-cursor-dot.cursor-hover {
+        scale: 0.5;
+        background-color: #ffffff;
+    }
+}
+
+
+@media (max-height: 850px) {
+    #full-screen-menu .menu-item a {
+        font-size: clamp(2rem, 4vh, 4.2rem) !important;
+    }
+    #full-screen-menu ul {
+        gap: 2.5vh !important;
+    }
+}
+
+@media (max-height: 680px) {
+    #full-screen-menu .menu-item a {
+        font-size: clamp(1.8rem, 4vh, 3.2rem) !important;
+    }
+    #full-screen-menu ul {
+        gap: 2vh !important;
+    }
+    
+}
+
+/* ==========================================================================
+   Estilos de Foco de Alto Contraste para Accesibilidad de Teclado
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex="0"]:focus-visible {
+    outline: 3px solid #9B59B6 !important;
+    outline-offset: 4px !important;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.6) !important;
+}
+
+/* Indicador específico para acordeones y contenedores con overflow hidden */
+.accordion-header:focus-visible {
+    outline: 3px solid #9B59B6 !important;
+    outline-offset: -3px !important;
+}

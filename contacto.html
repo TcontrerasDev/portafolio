@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tomas Contreras Moya <tcontreras.com@gmail.com>">
+    <title>Contacto | Colaboremos en tu Próximo Proyecto - Tomas Contreras</title>
+    <meta name="description" content="Ponte en contacto con Tomas Contreras para colaborar en el desarrollo front-end y diseño de tu aplicación o sitio web. Disponible para nuevos desafíos.">
+    <link rel="canonical" href="https://tocontrerasm.laboratoriodiseno.cl/contacto.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tocontrerasm.laboratoriodiseno.cl/contacto.html">
+    <meta property="og:title" content="Contacto | Colaboremos en tu Próximo Proyecto - Tomas Contreras">
+    <meta property="og:description" content="Ponte en contacto con Tomas Contreras para colaborar en el desarrollo front-end y diseño de tu aplicación o sitio web. Disponible para nuevos desafíos.">
+    <meta property="og:image" content="https://tocontrerasm.laboratoriodiseno.cl/assets/img/Isotipo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Contacto | Colaboremos en tu Próximo Proyecto - Tomas Contreras">
+    <meta property="twitter:description" content="Ponte en contacto con Tomas Contreras para colaborar en el desarrollo front-end y diseño de tu aplicación o sitio web. Disponible para nuevos desafíos.">
+    <meta property="twitter:image" content="https://tocontrerasm.laboratoriodiseno.cl/assets/img/Isotipo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#010101] text-white h-screen overflow-hidden">
+    <div class="bg-[#010101f0] absolute inset-0 z-[-1]"></div>
+    <div class="luz-hero"></div>
+    
+    <header class="container mx-auto px-5 pt-2.5 lg:pt-[20px] fixed lg:absolute z-120">
+        <nav class="flex items-center justify-between" aria-label="Navegación principal">
+            <div id="logo">
+                <a href="index.html"><img src="assets/img/Isotipo.png" alt="Logotipo de Tomas Contreras Moya (Ir al inicio)" class="w-[7rem]"></a>
+            </div>
+            <button id="menu-toggle" class="cursor-pointer z-110" aria-label="Menú principal" aria-expanded="false">
+                <svg width="62" height="55" viewBox="0 0 62 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line class="line-1" x1="10" y1="23" x2="52.0016" y2="23" stroke="white" stroke-width="5"/>
+                    <line class="line-2" x1="30.0006" y1="33" x2="52.0015" y2="33" stroke="white" stroke-width="5"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Full-screen Menu Overlay -->
+    <div id="full-screen-menu" class="fixed inset-0 bg-[#010101] z-100 hidden flex-col justify-center px-10 md:px-20 opacity-0">
+        <div class="menu-luz absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(155,89,182,0.15)_0%,transparent_70%)] blur-[60px] pointer-events-none"></div>
+        
+        <div class="container mx-auto flex flex-col xl:flex-row justify-between items-center gap-4 md:gap-6 relative z-10">
+            <nav aria-label="Navegación del menú">
+                <ul class="flex flex-col gap-6 md:gap-10">
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="index.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">01</span>
+                            <span class="menu-link-fill">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="perfil.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">02</span>
+                            <span class="menu-link-fill">Perfil</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="experiencia.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">03</span>
+                            <span class="menu-link-fill">Experiencia</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="proyectos.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">04</span>
+                            <span class="menu-link-fill">Proyectos</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="contacto.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">05</span>
+                            <span class="menu-link-fill">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="menu-brand-section flex flex-col items-center gap-8 opacity-0 translate-x-10">
+                <img src="assets/img/Isotipo.png" alt="Tom.Dev" class="w-[100px] md:w-[200px] lg:w-[300px]">
+                <div class="text-right">
+                    <h2 class="menu-brand-text text-[4rem] md:text-[6rem] leading-none">Tom<span class="text-[#9B59B6]">.</span>Dev</h2>
+                </div>
+                <div class="flex gap-6 text-[#9B59B6] text-2xl">
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de GitHub de Tomás">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de Behance de Tomás">
+                        <i class="fa-brands fa-behance" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de LinkedIn de Tomás">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de Instagram de Tomás">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container mx-auto px-5 h-screen overflow-y-auto flex relative z-10 pt-28 pb-8 lg:pt-0 lg:pb-0">
+        <section class="flex flex-col items-center justify-center gap-[30px] max-w-[45rem] m-auto py-8">
+            <h1 class="text-center text-[48px] overflow-hidden py-1">
+                <span class="block translate-y-full contact-title">¿Empezamos a crear?</span>
+            </h1>
+            <p class="text-center opacity-0 contact-desc">Abierto a colaborar en equipos de alto impacto. Si buscas un desarrollador comprometido con la calidad y la eficiencia técnica, hablemos.</p>
+            <a href="mailto:tcontreras.com@gmail.com" class="text-[#9B59B6] text-center text-[20px] font-['JetBrains_Mono'] pb-[20px] opacity-0 contact-email relative inline-block">tcontreras.com@gmail.com</a>
+            
+            <div class="flex flex-row flex-wrap gap-5 w-full justify-center relative pt-[50px]">
+                <div class="absolute top-0 left-0 w-full h-px bg-[#9B59B6] scale-x-0 contact-line origin-center"></div>
+                <a href="#" class="border border-[#9B59B6] text-white font-['JetBrains_Mono'] py-[15px] px-[20px] opacity-0 translate-y-5 contact-btn hover:text-black transition-colors duration-300 relative overflow-hidden group w-fit" aria-label="Perfil de LinkedIn de Tomás Contreras">
+                    <span class="relative z-10">Linkedin</span>
+                </a>
+                <a href="#" class="border border-[#9B59B6] text-white font-['JetBrains_Mono'] py-[15px] px-[20px] opacity-0 translate-y-5 contact-btn hover:text-black transition-colors duration-300 relative overflow-hidden group w-fit" aria-label="Perfil de GitHub de Tomás Contreras">
+                    <span class="relative z-10">GitHub</span>
+                </a>
+                <a href="#" class="border border-[#9B59B6] text-white font-['JetBrains_Mono'] py-[15px] px-[20px] opacity-0 translate-y-5 contact-btn hover:text-black transition-colors duration-300 relative overflow-hidden group" aria-label="Perfil de Behance de Tomás Contreras">
+                    <span class="relative z-10">Behance</span>
+                </a>
+                <a href="#" class="border border-[#9B59B6] text-white font-['JetBrains_Mono'] py-[15px] px-[20px] opacity-0 translate-y-5 contact-btn hover:text-black transition-colors duration-300 relative overflow-hidden group w-fit" aria-label="Perfil de Instagram de Tomás Contreras">
+                    <span class="relative z-10">Instagram</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/contacto.js"></script>
+</body>
+</html>

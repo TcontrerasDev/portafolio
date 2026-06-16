@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tomas Contreras Moya <tcontreras.com@gmail.com>">
+    <title>Proyectos Destacados | Tomas Contreras - Portafolio</title>
+    <meta name="description" content="Explora el listado de proyectos interactivos desarrollados por Tomas Contreras, incluyendo maquetación avanzada, animaciones premium y diseño UX/UI.">
+    <link rel="canonical" href="https://tocontrerasm.laboratoriodiseno.cl/proyectos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tocontrerasm.laboratoriodiseno.cl/proyectos.html">
+    <meta property="og:title" content="Proyectos Destacados | Tomas Contreras - Portafolio">
+    <meta property="og:description" content="Explora el listado de proyectos interactivos desarrollados por Tomas Contreras, incluyendo maquetación avanzada, animaciones premium y diseño UX/UI.">
+    <meta property="og:image" content="https://tocontrerasm.laboratoriodiseno.cl/assets/img/Isotipo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Proyectos Destacados | Tomas Contreras - Portafolio">
+    <meta property="twitter:description" content="Explora el listado de proyectos interactivos desarrollados por Tomas Contreras, incluyendo maquetación avanzada, animaciones premium y diseño UX/UI.">
+    <meta property="twitter:image" content="https://tocontrerasm.laboratoriodiseno.cl/assets/img/Isotipo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/proyectos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#010101] text-white">
+    <!-- Fondo fijo que cubre todo el scroll -->
+    <div class="fixed inset-0 bg-[#010101f0] z-[-1] pointer-events-none"></div>
+    <div class="luz-hero"></div>
+    
+    <header class="container mx-auto px-5 pt-2.5 lg:pt-[20px] fixed lg:absolute z-120">
+        <nav class="flex items-center justify-between" aria-label="Navegación principal">
+            <div id="logo">
+                <a href="index.html"><img src="assets/img/Isotipo.png" alt="Logotipo de Tomas Contreras Moya (Ir al inicio)" class="w-[7rem]"></a>
+            </div>
+            <button id="menu-toggle" class="cursor-pointer z-110" aria-label="Menú principal" aria-expanded="false">
+                <svg width="62" height="55" viewBox="0 0 62 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line class="line-1" x1="10" y1="23" x2="52.0016" y2="23" stroke="white" stroke-width="5"/>
+                    <line class="line-2" x1="30.0006" y1="33" x2="52.0015" y2="33" stroke="white" stroke-width="5"/>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Full-screen Menu Overlay -->
+    <div id="full-screen-menu" class="fixed inset-0 bg-[#010101] z-100 hidden flex-col justify-center px-10 md:px-20 opacity-0">
+        <div class="menu-luz absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(155,89,182,0.15)_0%,transparent_70%)] blur-[60px] pointer-events-none"></div>
+        
+        <div class="container mx-auto flex flex-col xl:flex-row justify-between items-center gap-4 md:gap-6 relative z-130">
+            <nav aria-label="Navegación del menú">
+                <ul class="flex flex-col gap-6 md:gap-10">
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="index.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">01</span>
+                            <span class="menu-link-fill">Inicio</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="perfil.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">02</span>
+                            <span class="menu-link-fill">Perfil</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="experiencia.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">03</span>
+                            <span class="menu-link-fill">Experiencia</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="proyectos.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">04</span>
+                            <span class="menu-link-fill">Proyectos</span>
+                        </a>
+                    </li>
+                    <li class="menu-item opacity-0 translate-y-10">
+                        <a href="contacto.html" class="group flex items-center gap-6 font-['JetBrains_Mono'] text-[2.5rem] md:text-[5rem] font-bold uppercase">
+                            <span class="menu-link-number">05</span>
+                            <span class="menu-link-fill">Contacto</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="menu-brand-section flex flex-col items-center gap-8 opacity-0 translate-x-10">
+                <img src="assets/img/Isotipo.png" alt="Tom.Dev" class="w-[100px] md:w-[200px] lg:w-[300px]">
+                <div class="text-right">
+                    <h2 class="menu-brand-text text-[4rem] md:text-[6rem] leading-none">Tom<span class="text-[#9B59B6]">.</span>Dev</h2>
+                </div>
+                <div class="flex gap-6 text-[#9B59B6] text-2xl">
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de GitHub de Tomás">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de Behance de Tomás">
+                        <i class="fa-brands fa-behance" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de LinkedIn de Tomás">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de Instagram de Tomás">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container mx-auto px-5 min-[1025px]:h-[calc(100vh-140px)] flex flex-col min-[1025px]:flex-row items-start min-[1025px]:items-center mt-[100px] min-[1025px]:mt-[140px] gap-10">
+        <h1 class="sr-only">Proyectos Destacados - Tomas Contreras</h1>
+        
+        <!-- Columna Izquierda: Solo escritorio -->
+        <section class="hidden min-[1025px]:flex w-full min-[1025px]:w-1/2 flex-col justify-center h-full relative z-10 px-10">
+            <div id="project-details" class="min-h-[500px] opacity-100">
+            </div>
+        </section>
+
+        <!-- Columna Derecha / Flujo Móvil -->
+        <section class="w-full min-[1025px]:w-1/2 h-auto min-[1025px]:h-[70vh] min-[1025px]:overflow-y-auto min-[1025px]:snap-y min-[1025px]:snap-mandatory scroll-smooth relative proyectos-scroll" id="project-list" aria-label="Listado de proyectos">
+            <!-- Espaciador superior (solo escritorio) -->
+            <div class="hidden min-[1025px]:block h-[30vh]"></div>
+            
+            <!-- Proyecto 1 -->
+            <article class="project-item snap-center transition-all duration-500 cursor-pointer" data-id="1" tabindex="0">
+                <h2 class="text-[3rem] ps-12 md:text-[6rem] xl:text-[7rem] font-bold uppercase font-['Space_Grotesk'] leading-none mb-6 w-[95%]">Diseño<br>Duoc</h2>
+                <!-- Contenedor Detalles (Oculto en desktop, visible en mobile) -->
+                <div class="project-details-container min-[1025px]:hidden text-left">
+                    <article class="border-l-4 lg:border-l border-[#9B59B6] px-5 lg:px-10 relative">
+                        <h3 class="hidden lg:block text-3xl lg:text-4xl font-bold font-['Space_Grotesk'] mb-2">diseno.duoc.cl Landing Page</h3>
+                        <h4 class="text-sm md:text-lg text-[#F39C12] font-['Space_Grotesk'] mb-4 lg:mb-6 tracking-wide">Desarrollo Front-End & Arquitectura Estática</h4>
+                        
+                        <div class="w-full bg-[#111] rounded-lg h-[180px] lg:h-[220px] mb-4 lg:mb-6 flex items-center justify-center border border-[#333] overflow-hidden">
+                            <span class="text-gray-600 font-['JetBrains_Mono'] text-xs text-center px-4">Mockup: diseno.duoc.cl Landing Page</span>
+                        </div>
+
+                        <div class="font-['JetBrains_Mono'] text-xs lg:text-sm text-gray-300 leading-relaxed mb-4 lg:mb-6 space-y-2 lg:space-y-4">
+                            <p>La infraestructura anterior del acceso principal de la Escuela de Diseño presentaba fallos críticos y una grave vulnerabilidad estructural.</p>
+                            <p>Para proteger el sitio y eliminar las vulnerabilidades de raíz, se migró la plataforma hacia una arquitectura web completamente estática. El desarrollo se ejecutó traduciendo fielmente la propuesta visual a una interfaz limpia, responsiva y totalmente funcional.</p>
+                        </div>
+
+                        <div class="font-['JetBrains_Mono'] text-[10px] lg:text-xs text-gray-400 mb-6 lg:mb-8 tracking-widest uppercase">
+                            HTML5 / CSS 3 / Bootstrap / JavaScript (ES6+)
+                        </div>
+
+                        <div class="flex gap-6 text-[#9B59B6] text-xl lg:text-2xl">
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Ver repositorio en GitHub del proyecto diseno.duoc.cl Landing Page"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Ver presentación en Behance del proyecto diseno.duoc.cl Landing Page"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el sitio web en vivo de diseno.duoc.cl Landing Page"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="project-item snap-center transition-all duration-500 cursor-pointer" data-id="2" tabindex="0">
+                <h2 class="text-[3rem] ps-12 md:text-[6rem] xl:text-[7rem] font-bold uppercase font-['Space_Grotesk'] leading-none mb-6 w-[95%]">DDHub</h2>
+                <div class="project-details-container min-[1025px]:hidden text-left">
+                    <article class="border-l-4 lg:border-l border-[#9B59B6] px-5 lg:px-10 relative">
+                        <h3 class="hidden lg:block text-3xl lg:text-4xl font-bold font-['Space_Grotesk'] mb-2">DDHub Platform</h3>
+                        <h4 class="text-sm md:text-lg text-[#F39C12] font-['Space_Grotesk'] mb-4 lg:mb-6 tracking-wide">Sistema Centralizado de Recursos</h4>
+                        
+                        <div class="w-full bg-[#111] rounded-lg h-[180px] lg:h-[220px] mb-4 lg:mb-6 flex items-center justify-center border border-[#333] overflow-hidden">
+                            <span class="text-gray-600 font-['JetBrains_Mono'] text-xs text-center px-4">Mockup: DDHub Platform</span>
+                        </div>
+
+                        <div class="font-['JetBrains_Mono'] text-xs lg:text-sm text-gray-300 leading-relaxed mb-4 lg:mb-6 space-y-2 lg:space-y-4">
+                            <p>Plataforma centralizada para herramientas de la comunidad de desarrolladores. Construida con un fuerte enfoque en la velocidad y la accesibilidad.</p>
+                            <p>Implementación de un sistema de diseño modular que permite escalabilidad y coherencia visual en todos los componentes de la interfaz.</p>
+                        </div>
+
+                        <div class="font-['JetBrains_Mono'] text-[10px] lg:text-xs text-gray-400 mb-6 lg:mb-8 tracking-widest uppercase">
+                            React / Tailwind CSS / Node.js / MongoDB
+                        </div>
+
+                        <div class="flex gap-6 text-[#9B59B6] text-xl lg:text-2xl">
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Ver repositorio en GitHub del proyecto DDHub Platform"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Ver presentación en Behance del proyecto DDHub Platform"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el sitio web en vivo de DDHub Platform"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="project-item snap-center transition-all duration-500 cursor-pointer" data-id="3" tabindex="0">
+                <h2 class="text-[3rem] ps-12 md:text-[6rem] xl:text-[7rem] font-bold uppercase font-['Space_Grotesk'] leading-none mb-6 w-[95%]">Cine<br>Estrella</h2>
+                <div class="project-details-container min-[1025px]:hidden text-left">
+                    <article class="border-l-4 lg:border-l border-[#9B59B6] px-5 lg:px-10 relative">
+                        <h3 class="hidden lg:block text-3xl lg:text-4xl font-bold font-['Space_Grotesk'] mb-2">Cine Estrella</h3>
+                        <h4 class="text-sm md:text-lg text-[#F39C12] font-['Space_Grotesk'] mb-4 lg:mb-6 tracking-wide">Rediseño de Booking Experience</h4>
+                        
+                        <div class="w-full bg-[#111] rounded-lg h-[180px] lg:h-[220px] mb-4 lg:mb-6 flex items-center justify-center border border-[#333] overflow-hidden">
+                            <span class="text-gray-600 font-['JetBrains_Mono'] text-xs text-center px-4">Mockup: Cine Estrella</span>
+                        </div>
+
+                        <div class="font-['JetBrains_Mono'] text-xs lg:text-sm text-gray-300 leading-relaxed mb-4 lg:mb-6 space-y-2 lg:space-y-4">
+                            <p>Rediseño completo de la experiencia de usuario para la reserva y compra de entradas de cine. Optimización del flujo de pago y selección de asientos.</p>
+                            <p>Integración con pasarelas de pago y sistema de cartelera dinámica en tiempo real.</p>
+                        </div>
+
+                        <div class="font-['JetBrains_Mono'] text-[10px] lg:text-xs text-gray-400 mb-6 lg:mb-8 tracking-widest uppercase">
+                            Vue.js / Nuxt / Firebase / Stripe
+                        </div>
+
+                        <div class="flex gap-6 text-[#9B59B6] text-xl lg:text-2xl">
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Ver repositorio en GitHub del proyecto Cine Estrella"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Ver presentación en Behance del proyecto Cine Estrella"><i class="fa-brands fa-behance" aria-hidden="true"></i></a>
+                            <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el sitio web en vivo de Cine Estrella"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </article>
+
+            <!-- Espaciador inferior (solo escritorio) -->
+            <div class="hidden min-[1025px]:block h-[30vh]"></div>
+        </section>
+    </main>
+
+    <!-- Controles de navegación móvil -->
+    <div id="mobile-proj-nav" class="fixed right-5 bottom-12 z-50 flex flex-col min-[1025px]:hidden items-center gap-4 bg-[#010101]/80 border border-[#9B59B6]/40 px-2 py-4 rounded-full backdrop-blur-md shadow-lg shadow-[#000]/80">
+        <button id="mobile-prev-btn" class="text-white hover:text-[#9B59B6] transition-colors disabled:opacity-20 disabled:pointer-events-none cursor-pointer p-1" aria-label="Proyecto anterior">
+            <i class="fa-solid fa-chevron-up text-lg"></i>
+        </button>
+        <span id="mobile-proj-counter" class="font-['JetBrains_Mono'] text-xs font-bold tracking-wider text-[#9B59B6] my-1">1/3</span>
+        <button id="mobile-next-btn" class="text-white hover:text-[#9B59B6] transition-colors disabled:opacity-20 disabled:pointer-events-none cursor-pointer p-1" aria-label="Proyecto siguiente">
+            <i class="fa-solid fa-chevron-down text-lg"></i>
+        </button>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/proyectos.js"></script>
+</body>
+</html>
