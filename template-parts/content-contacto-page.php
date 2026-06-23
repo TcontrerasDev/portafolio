@@ -27,7 +27,7 @@
             if($get_RRSS){
                 foreach($get_RRSS as $rrss){ ?>
 
-                <a href="<?php echo $rrss['enlace<'] ?>" class="border border-[#9B59B6] text-white font-['JetBrains_Mono'] py-[15px] px-[20px] opacity-0 translate-y-5 contact-btn hover:text-black transition-colors duration-300 relative overflow-hidden group w-fit" aria-label="Perfil de <?php echo $rrss['nombre'] ?> de Tomas Contreras">
+                <a href="<?php echo $rrss['enlace'] ?>" target="_blank" class="border border-[#9B59B6] text-white font-['JetBrains_Mono'] py-[15px] px-[20px] opacity-0 translate-y-5 contact-btn hover:text-black transition-colors duration-300 relative overflow-hidden group w-fit" aria-label="Perfil de <?php echo $rrss['nombre'] ?> de Tomas Contreras">
                     <span class="relative z-10"><?php echo $rrss['nombre'] ?></span>
                 </a>
 

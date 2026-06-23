@@ -101,16 +101,16 @@
                     <h2 class="menu-brand-text text-[4rem] lg:text-[6rem] leading-none">Tom<span class="text-[#9B59B6]">.</span>Dev</h2>
                 </div>
                 <div class="flex gap-6 text-[#9B59B6] text-2xl">
-                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de GitHub de Tomás">
+                    <a href="https://github.com/TcontrerasDev"  target="_blank" class="hover:text-white transition-colors" aria-label="Visitar el perfil de GitHub de Tomás">
                         <i class="fa-brands fa-github" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de Behance de Tomás">
+                    <a href="https://www.behance.net/tomascontrer1" target="_blank"  class="hover:text-white transition-colors" aria-label="Visitar el perfil de Behance de Tomás">
                         <i class="fa-brands fa-behance" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de LinkedIn de Tomás">
+                    <a href="https://www.linkedin.com/in/tomas-contreras-6455b332b" target="_blank"  class="hover:text-white transition-colors" aria-label="Visitar el perfil de LinkedIn de Tomás">
                         <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
-                    <a href="#" class="hover:text-white transition-colors" aria-label="Visitar el perfil de Instagram de Tomás">
+                    <a href="https://www.instagram.com/t0m_ct/?hl=es" target="_blank"  class="hover:text-white transition-colors" aria-label="Visitar el perfil de Instagram de Tomás">
                         <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
                 </div>
