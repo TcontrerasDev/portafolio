@@ -34,9 +34,9 @@ if ( $proyectos_query->have_posts() ) :
 					<h3 class="hidden lg:block text-3xl lg:text-4xl font-bold font-['Space_Grotesk'] mb-2">
 						<?php echo get_the_title() ?>
 					</h3>
-					<h4 class="text-sm md:text-lg text-[#F39C12] font-['Space_Grotesk'] mb-4 lg:mb-6 tracking-wide">
-						<?php echo get_the_excerpt() ?>
-					</h4>
+					<p class="text-sm md:text-lg text-[#F39C12] font-['Space_Grotesk'] mb-4 lg:mb-6 tracking-wide">
+						<?php echo get_the_excerpt(); ?>
+					</p>
 					
 					<div class="w-full rounded-lg h-[180px] lg:h-[350px] mb-4 lg:mb-6 flex items-center justify-center border border-[#333] overflow-hidden">
 						<?php 

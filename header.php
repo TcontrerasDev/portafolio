@@ -27,7 +27,7 @@
 	<div class="bg-[#010101f0] absolute inset-0 z-[-1]"></div>
     <div class="luz-hero"></div>
 
-	<header id="masthead" class="container mx-auto px-5 pt-[50px] fixed top-0 z-120">
+	<header id="masthead" class="container mx-auto px-5 py-[20px] fixed top-0 z-120">
 		<?php// the_custom_logo(); ?>
 
 		<?php if(is_front_page()) { ?>

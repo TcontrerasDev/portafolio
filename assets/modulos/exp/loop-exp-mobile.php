@@ -26,7 +26,7 @@ if ( $proyectos_query->have_posts() ) :
 
 			<article class="accordion-item border border-[#9B59B6]/20 bg-[#160f1c]/40 rounded-lg overflow-hidden opacity-0 translate-y-10">
 				<h2 class="m-0">
-					<button id="accordion-header-0" class="accordion-header w-full p-5 text-left flex justify-between items-center gap-4 cursor-pointer focus:outline-none select-none border-0" aria-expanded="false" aria-controls="accordion-content-0">
+					<button id="accordion-header-<?php echo esc_attr( $counter ); ?>" class="accordion-header w-full p-5 text-left flex justify-between items-center gap-4 cursor-pointer focus:outline-none select-none border-0" aria-expanded="false" aria-controls="accordion-content-<?php echo esc_attr( $counter ); ?>">
 						<span class="flex flex-col gap-1">
 							<span class="text-xs font-['JetBrains_Mono'] text-[#9B59B6]"><?php the_field('fechas') ?> </span>
 							<span class="text-lg font-bold font-['Space_Grotesk'] text-white"><?php echo get_the_title() ?></span>
@@ -35,7 +35,7 @@ if ( $proyectos_query->have_posts() ) :
 						<i class="fa-solid fa-chevron-down text-[#9B59B6] transition-transform duration-300"></i>
 					</button>
 				</h2>
-				<div id="accordion-content-0" class="accordion-content h-0 overflow-hidden" role="region" aria-labelledby="accordion-header-0">
+				<div id="accordion-content-<?php echo esc_attr( $counter ); ?>" class="accordion-content h-0 overflow-hidden" role="region" aria-labelledby="accordion-header-<?php echo esc_attr( $counter ); ?>">
 					<div class="p-5 pt-0 border-t border-[#9B59B6]/10">
 						<ul class="space-y-3 font-['JetBrains_Mono'] text-xs text-gray-300 leading-relaxed mt-4">
 							<?php

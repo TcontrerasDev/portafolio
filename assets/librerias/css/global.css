@@ -82,6 +82,14 @@ header{
     right: 50%;
     transform: translateX(50%);
     pointer-events: none; /* Permitir clicks a través de las zonas vacías del contenedor */
+    transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+@media (max-width: 1024px) {
+    header.header-hidden {
+        transform: translateX(50%) translateY(-115%) !important;
+    }
 }
 
 header #logo,

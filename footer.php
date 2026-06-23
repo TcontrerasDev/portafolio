@@ -10,6 +10,9 @@
  */
 
 ?>
+	<footer id="colophon" class="sr-only" role="contentinfo">
+		&copy; <?php echo date_i18n( 'Y' ); ?> Tom.Dev. Todos los derechos reservados.
+	</footer>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

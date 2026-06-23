@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center justify-center pt-50 pb-8 lg:pt-[200px] lg:pb-10">
+	<main id="primary" class="container mx-auto px-4 sm:px-6 lg:px-8 min-h-screen flex items-center justify-center pt-30 pb-8 lg:pt-[130px] lg:pb-10">
 
 		<?php
 		while ( have_posts() ) :

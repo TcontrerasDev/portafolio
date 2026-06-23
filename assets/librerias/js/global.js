@@ -428,4 +428,45 @@ charSpanOrig.className = 'inline-block char-orig';
     };
 
     initInteractiveGrid();
+
+    // 6. Ocultar/Mostrar Cabezal en Móvil al hacer Scroll (Vertical)
+    const masthead = document.getElementById('masthead');
+    const menuToggle = document.getElementById('menu-toggle');
+    let lastScrollTop = 0;
+    
+    if (masthead) {
+        const handleMobileHeaderScroll = () => {
+            // Solo en móvil (<= 1024px)
+            if (window.innerWidth > 1024) {
+                masthead.classList.remove('header-hidden');
+                return;
+            }
+            
+            // Si el menú móvil está abierto, no esconder el cabezal
+            if (menuToggle && menuToggle.getAttribute('aria-expanded') === 'true') {
+                masthead.classList.remove('header-hidden');
+                return;
+            }
+            
+            // Solo nos interesa el scroll vertical de la ventana principal
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            
+            // Evitar oscilaciones por rebotes de scroll en móviles (ej. iOS rubber-band)
+            const diff = scrollTop - lastScrollTop;
+            if (Math.abs(diff) < 8) return;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 60) {
+                // Scroll hacia abajo (esconder)
+                masthead.classList.add('header-hidden');
+            } else {
+                // Scroll hacia arriba (mostrar)
+                masthead.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        };
+
+        // Escuchar eventos de scroll solo a nivel de ventana (sin fase de captura para ignorar contenedores internos)
+        window.addEventListener('scroll', handleMobileHeaderScroll, { passive: true });
+    }
 });

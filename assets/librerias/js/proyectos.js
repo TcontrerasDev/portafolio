@@ -244,152 +244,39 @@ document.addEventListener("DOMContentLoaded", () => {
             let currentIndex = 0;
             const totalProjects = projectItems.length;
 
-            const updateMobileCards = (prevIndex, newIndex, animated = true) => {
-                if (!animated) {
-                    projectItems.forEach((item, index) => {
-                        // Normal DOM order z-index: higher index stacks on top
-                        item.style.zIndex = index + 1;
+            // Configurar IntersectionObserver para detectar qué tarjeta está en el centro
+            const observerOptions = {
+                root: scrollContainer,
+                threshold: 0.5,
+                rootMargin: "0px -25% 0px -25%" // enfoca la detección en el centro del viewport
+            };
 
-                        if (index < newIndex) {
-                            gsap.set(item, {
-                                y: "0%",
-                                opacity: 0,
-                                scale: 0.85,
-                                filter: "blur(10px)",
-                                pointerEvents: "none"
-                            });
-                            item.setAttribute('aria-hidden', 'true');
-                            item.setAttribute('inert', '');
-                        } else if (index === newIndex) {
-                            gsap.set(item, {
-                                y: "0%",
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                                pointerEvents: "auto"
-                            });
-                            item.setAttribute('aria-hidden', 'false');
-                            item.removeAttribute('inert');
-                        } else {
-                            gsap.set(item, {
-                                y: "100%",
-                                opacity: 1,
-                                scale: 1,
-                                filter: "blur(0px)",
-                                pointerEvents: "none"
-                            });
-                            item.setAttribute('aria-hidden', 'true');
-                            item.setAttribute('inert', '');
-                        }
-                    });
-                } else {
-                    const oldCard = projectItems[prevIndex];
-                    const newCard = projectItems[newIndex];
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = parseInt(entry.target.getAttribute('data-id'), 10);
+                        const index = id - 1;
+                        currentIndex = index;
 
-                    if (newIndex > prevIndex) {
-                        // NEXT transition: oldCard scales down/fades/blurs, newCard slides UP
-                        gsap.killTweensOf([oldCard, newCard]);
-
-                        gsap.set(newCard, { y: "100%", opacity: 1, scale: 1, filter: "blur(0px)" });
-
-                        gsap.to(oldCard, {
-                            opacity: 0,
-                            scale: 0.85,
-                            filter: "blur(10px)",
-                            pointerEvents: "none",
-                            duration: 0.2,
-                            ease: "power2.out",
-                            onStart: () => {
-                                oldCard.setAttribute('aria-hidden', 'true');
-                                oldCard.setAttribute('inert', '');
-                            }
-                        });
-
-                        gsap.to(newCard, {
-                            y: "0%",
-                            pointerEvents: "auto",
-                            duration: 0.2,
-                            ease: "power2.out",
-                            onStart: () => {
-                                newCard.setAttribute('aria-hidden', 'false');
-                                newCard.removeAttribute('inert');
-                            }
-                        });
-                    } else {
-                        // PREV transition: oldCard slides DOWN, newCard scales up/fades in/unblurs
-                        gsap.killTweensOf([oldCard, newCard]);
-
-                        gsap.to(oldCard, {
-                            y: "100%",
-                            pointerEvents: "none",
-                            duration: 0.2,
-                            ease: "power2.out",
-                            onStart: () => {
-                                oldCard.setAttribute('aria-hidden', 'true');
-                                oldCard.setAttribute('inert', '');
-                            }
-                        });
-
-                        gsap.to(newCard, {
-                            opacity: 1,
-                            scale: 1,
-                            filter: "blur(0px)",
-                            pointerEvents: "auto",
-                            duration: 0.2,
-                            ease: "power2.out",
-                            onStart: () => {
-                                newCard.setAttribute('aria-hidden', 'false');
-                                newCard.removeAttribute('inert');
+                        // Asignar clase activa y estilos de borde
+                        projectItems.forEach((item, idx) => {
+                            if (idx === currentIndex) {
+                                item.classList.add('active');
+                            } else {
+                                item.classList.remove('active');
                             }
                         });
                     }
-                }
+                });
+            }, observerOptions);
 
-                // Actualizar contador y estado de los botones
-                const counter = document.getElementById('mobile-proj-counter');
-                if (counter) {
-                    counter.textContent = `${newIndex + 1}/${totalProjects}`;
-                }
-
-                const prevBtn = document.getElementById('mobile-prev-btn');
-                const nextBtn = document.getElementById('mobile-next-btn');
-
-                if (prevBtn) prevBtn.disabled = (newIndex === 0);
-                if (nextBtn) nextBtn.disabled = (newIndex === totalProjects - 1);
-            };
-
-            // Inicializar sin animación
-            updateMobileCards(null, 0, false);
-
-            const onNext = () => {
-                if (currentIndex < totalProjects - 1) {
-                    const prev = currentIndex;
-                    currentIndex++;
-                    updateMobileCards(prev, currentIndex, true);
-                }
-            };
-
-            const onPrev = () => {
-                if (currentIndex > 0) {
-                    const prev = currentIndex;
-                    currentIndex--;
-                    updateMobileCards(prev, currentIndex, true);
-                }
-            };
-
-            const nextBtn = document.getElementById('mobile-next-btn');
-            const prevBtn = document.getElementById('mobile-prev-btn');
-
-            if (nextBtn) nextBtn.addEventListener('click', onNext);
-            if (prevBtn) prevBtn.addEventListener('click', onPrev);
+            projectItems.forEach(item => observer.observe(item));
 
             // Retornar función de limpieza
             return () => {
                 window.removeEventListener('resize', updateHeaderHeight);
                 document.documentElement.style.removeProperty('--header-height-mobile');
-                
-                if (nextBtn) nextBtn.removeEventListener('click', onNext);
-                if (prevBtn) prevBtn.removeEventListener('click', onPrev);
+                observer.disconnect();
 
                 projectItems.forEach(i => {
                     i.style.removeProperty('opacity');
@@ -399,6 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     i.style.removeProperty('pointer-events');
                     i.removeAttribute('aria-hidden');
                     i.removeAttribute('inert');
+                    i.classList.remove('active');
                 });
             };
         }

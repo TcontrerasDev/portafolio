@@ -8,7 +8,7 @@
  */
 
 ?>
-<h1 class="sr-only">Proyectos Destacados - Tomas Contreras</h1>
+<h1 class="sr-only"><?php the_title(); ?> - Tomas Contreras</h1>
 <section class="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-10 w-full profile-card opacity-0 translate-y-10 overflow-hidden">
     <div class="w-full lg:w-[35%] xl:w-[30%] h-[300px] sm:h-[450px] lg:h-auto overflow-hidden">
         <?php 

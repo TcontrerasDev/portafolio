@@ -111,17 +111,49 @@ function portafolio_add_custom_seo_meta() {
 	if ( ! $logo_url ) {
 		$logo_url = 'https://tocontrerasm.laboratoriodiseno.cl/assets/img/Isotipo.png';
 	}
+
+	// Dynamic Canonical & OG URL
+	$current_url = home_url( '/' );
+	if ( is_singular() ) {
+		$current_url = get_permalink();
+	} else {
+		global $wp;
+		if ( isset( $wp->request ) ) {
+			$current_url = home_url( add_query_arg( array(), $wp->request ) );
+		}
+	}
+	$current_url = esc_url( $current_url );
+
+	// Dynamic Title
+	if ( is_front_page() || is_home() ) {
+		$seo_title = get_bloginfo( 'name' ) . ' | ' . get_bloginfo( 'description' );
+	} else {
+		$seo_title = get_the_title() . ' | ' . get_bloginfo( 'name' );
+	}
+	$seo_title = esc_attr( $seo_title );
+
+	// Dynamic Description
+	$seo_desc = 'Portafolio profesional de Tomas Contreras. Especialista en desarrollo front-end y diseño UX/UI de alta calidad.';
+	if ( is_singular() && has_excerpt() ) {
+		$seo_desc = wp_strip_all_tags( get_the_excerpt() );
+	} elseif ( is_singular() ) {
+		$post = get_post();
+		if ( $post && ! empty( $post->post_content ) ) {
+			$seo_desc = wp_strip_all_tags( wp_trim_words( $post->post_content, 25 ) );
+		}
+	}
+	$seo_desc = esc_attr( $seo_desc );
 	?>
 	<meta name="author" content="Tomas Contreras Moya <tcontreras.com@gmail.com>">
-	<meta name="description" content="Portafolio profesional de Tomas Contreras. Especialista en desarrollo front-end y diseño UX/UI de alta calidad.">
-	<link rel="canonical" href="https://tocontrerasm.laboratoriodiseno.cl/index.html">
+	<meta name="description" content="<?php echo $seo_desc; ?>">
+	<link rel="canonical" href="<?php echo $current_url; ?>">
 	
 	<!-- Open Graph / Facebook / Instagram -->
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://tocontrerasm.laboratoriodiseno.cl/index.html">
+	<meta property="og:url" content="<?php echo $current_url; ?>">
 	<meta property="og:site_name" content="Tomas Contreras Moya | Portafolio">
-	<meta property="og:title" content="Tomas Contreras | Desarrollador Front-End &amp; Diseñador UX/UI">
-	<meta property="og:description" content="Portafolio profesional de Tomas Contreras. Especialista en desarrollo front-end moderno, interfaces premium, animaciones GSAP y diseño UX/UI de alta calidad.">
+	<meta property="og:title" content="<?php echo $seo_title; ?>">
+	<meta property="og:description" content="<?php echo $seo_desc; ?>">
 	<meta property="og:image" content="<?php echo esc_url( $logo_url ); ?>">
 	<?php if ( $logo_width && $logo_height ) : ?>
 		<meta property="og:image:width" content="<?php echo esc_attr( $logo_width ); ?>">
@@ -130,8 +162,8 @@ function portafolio_add_custom_seo_meta() {
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:title" content="Tomas Contreras | Desarrollador Front-End &amp; Diseñador UX/UI">
-	<meta property="twitter:description" content="Portafolio profesional de Tomas Contreras. Especialista en desarrollo front-end y diseño UX/UI de alta calidad.">
+	<meta property="twitter:title" content="<?php echo $seo_title; ?>">
+	<meta property="twitter:description" content="<?php echo $seo_desc; ?>">
 	<meta property="twitter:image" content="<?php echo esc_url( $logo_url ); ?>">
 
 	<!-- Structured Data Schema.org -->
@@ -141,7 +173,7 @@ function portafolio_add_custom_seo_meta() {
 	  "@type": "Person",
 	  "name": "Tomas Contreras Moya",
 	  "jobTitle": "Front-End Developer & UX/UI Designer",
-	  "url": "https://tocontrerasm.laboratoriodiseno.cl",
+	  "url": "<?php echo esc_url( home_url( '/' ) ); ?>",
 	  "sameAs": [
 		"https://github.com/TcontrerasDev",
 		"https://linkedin.com/in/tomas-contreras-6455b332b",
